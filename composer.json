@@ -41,7 +41,7 @@
         "illuminate/console": "^7.0.0",
         "illuminate/database": "^7.0.0",
         "illuminate/support": "^7.0.0",
-        "rinvex72/laravel-support": "^4.0.0",
+        "rinvex72/laravel-support": "dev-master",
         "spatie/eloquent-sortable": "^3.7.0",
         "spatie/laravel-sluggable": "^2.2.0",
         "spatie/laravel-translatable": "^4.2.0"
