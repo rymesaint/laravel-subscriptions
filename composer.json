@@ -43,7 +43,7 @@
         "illuminate/support": "^7.0.0",
         "rinvex72/laravel-support": "dev-master",
         "spatie/eloquent-sortable": "^3.7.0",
-        "spatie/laravel-sluggable": "2.2.x-dev",
+        "spatie/laravel-sluggable": "2.2.2",
         "spatie/laravel-translatable": "^4.2.0"
     },
     "require-dev": {
