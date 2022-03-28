@@ -136,10 +136,10 @@ class PlanFeature extends Model implements Sortable
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('rinvex.subscriptions.tables.plan_features'));
+        $this->setTable(config('subscriptions.tables.plan_features'));
         $this->setRules([
-            'plan_id' => 'required|integer|exists:'.config('rinvex.subscriptions.tables.plans').',id',
-            'slug' => 'required|alpha_dash|max:150|unique:'.config('rinvex.subscriptions.tables.plan_features').',slug',
+            'plan_id' => 'required|integer|exists:'.config('subscriptions.tables.plans').',id',
+            'slug' => 'required|alpha_dash|max:150|unique:'.config('subscriptions.tables.plan_features').',slug',
             'name' => 'required|string|strip_tags|max:150',
             'description' => 'nullable|string|max:10000',
             'value' => 'required|string',
@@ -169,7 +169,7 @@ class PlanFeature extends Model implements Sortable
      */
     public function usage(): HasMany
     {
-        return $this->hasMany(config('rinvex.subscriptions.models.plan_subscription_usage'), 'feature_id', 'id');
+        return $this->hasMany(config('subscriptions.models.plan_subscription_usage'), 'feature_id', 'id');
     }
 
     /**

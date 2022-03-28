@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
-class CreatePlansTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +16,7 @@ class CreatePlansTable extends Migration
      */
     public function up(): void
     {
-        Schema::create(config('rinvex.subscriptions.tables.plans'), function (Blueprint $table) {
+        Schema::create(config('subscriptions.tables.plans'), function (Blueprint $table) {
             // Columns
             $table->increments('id');
             $table->string('slug');
@@ -50,7 +52,7 @@ class CreatePlansTable extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists(config('rinvex.subscriptions.tables.plans'));
+        Schema::dropIfExists(config('subscriptions.tables.plans'));
     }
 
     /**
@@ -66,4 +68,4 @@ class CreatePlansTable extends Migration
 
         return $driverName === 'mysql' && $isOldVersion ? 'text' : 'json';
     }
-}
+};

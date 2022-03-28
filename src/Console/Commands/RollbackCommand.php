@@ -31,7 +31,7 @@ class RollbackCommand extends Command
     {
         $this->alert($this->description);
 
-        $path = config('rinvex.subscriptions.autoload_migrations') ?
+        $path = config('subscriptions.autoload_migrations') ?
             'vendor/rymesaint/laravel-subscriptions/database/migrations' :
             'database/migrations/rymesaint/laravel-subscriptions';
 

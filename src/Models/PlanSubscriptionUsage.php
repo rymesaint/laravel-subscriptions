@@ -92,10 +92,10 @@ class PlanSubscriptionUsage extends Model
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('rinvex.subscriptions.tables.plan_subscription_usage'));
+        $this->setTable(config('subscriptions.tables.plan_subscription_usage'));
         $this->setRules([
-            'subscription_id' => 'required|integer|exists:'.config('rinvex.subscriptions.tables.plan_subscriptions').',id',
-            'feature_id' => 'required|integer|exists:'.config('rinvex.subscriptions.tables.plan_features').',id',
+            'subscription_id' => 'required|integer|exists:'.config('subscriptions.tables.plan_subscriptions').',id',
+            'feature_id' => 'required|integer|exists:'.config('subscriptions.tables.plan_features').',id',
             'used' => 'required|integer',
             'valid_until' => 'nullable|date',
         ]);
@@ -108,7 +108,7 @@ class PlanSubscriptionUsage extends Model
      */
     public function feature(): BelongsTo
     {
-        return $this->belongsTo(config('rinvex.subscriptions.models.plan_feature'), 'feature_id', 'id', 'feature');
+        return $this->belongsTo(config('subscriptions.models.plan_feature'), 'feature_id', 'id', 'feature');
     }
 
     /**
@@ -118,7 +118,7 @@ class PlanSubscriptionUsage extends Model
      */
     public function subscription(): BelongsTo
     {
-        return $this->belongsTo(config('rinvex.subscriptions.models.plan_subscription'), 'subscription_id', 'id', 'subscription');
+        return $this->belongsTo(config('subscriptions.models.plan_subscription'), 'subscription_id', 'id', 'subscription');
     }
 
     /**

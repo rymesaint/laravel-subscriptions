@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Rinvex\Subscriptions\Models;
 
-use DB;
 use Carbon\Carbon;
 use LogicException;
 use Spatie\Sluggable\SlugOptions;
@@ -17,6 +16,7 @@ use Rinvex\Support\Traits\ValidatingTrait;
 use Rinvex\Subscriptions\Traits\BelongsToPlan;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Rinvex\Subscriptions\Models\PlanSubscription.
@@ -145,12 +145,12 @@ class PlanSubscription extends Model
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('rinvex.subscriptions.tables.plan_subscriptions'));
+        $this->setTable(config('subscriptions.tables.plan_subscriptions'));
         $this->setRules([
             'name' => 'required|string|strip_tags|max:150',
             'description' => 'nullable|string|max:10000',
-            'slug' => 'required|alpha_dash|max:150|unique:'.config('rinvex.subscriptions.tables.plan_subscriptions').',slug',
-            'plan_id' => 'required|integer|exists:'.config('rinvex.subscriptions.tables.plans').',id',
+            'slug' => 'required|alpha_dash|max:150|unique:'.config('subscriptions.tables.plan_subscriptions').',slug',
+            'plan_id' => 'required|integer|exists:'.config('subscriptions.tables.plans').',id',
             'user_id' => 'required|integer',
             'user_type' => 'required|string|strip_tags|max:150',
             'trial_ends_at' => 'nullable|date',
@@ -205,7 +205,7 @@ class PlanSubscription extends Model
      */
     public function usage(): hasMany
     {
-        return $this->hasMany(config('rinvex.subscriptions.models.plan_subscription_usage'), 'subscription_id', 'id');
+        return $this->hasMany(config('subscriptions.models.plan_subscription_usage'), 'subscription_id', 'id');
     }
 
     /**

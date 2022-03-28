@@ -32,7 +32,7 @@ trait HasSubscriptions
      */
     public function subscriptions(): MorphMany
     {
-        return $this->morphMany(config('rinvex.subscriptions.models.plan_subscription'), 'user');
+        return $this->morphMany(config('subscriptions.models.plan_subscription'), 'user');
     }
 
     /**
@@ -66,7 +66,7 @@ trait HasSubscriptions
     {
         $planIds = $this->subscriptions->reject->inactive()->pluck('plan_id')->unique();
 
-        return app('rinvex.subscriptions.plan')->whereIn('id', $planIds)->get();
+        return app('subscriptions.plan')->whereIn('id', $planIds)->get();
     }
 
     /**
