@@ -1,5 +1,5 @@
 {
-    "name": "rinvex72/laravel-subscriptions",
+    "name": "rymesaint/laravel-subscriptions",
     "description": "Rinvex Subscriptions is a flexible plans and subscription management system for Laravel, with the required tools to run your SAAS like services efficiently. It's simple architecture, accompanied by powerful underlying to afford solid platform for your business.",
     "type": "library",
     "keywords": [
@@ -15,9 +15,9 @@
     "homepage": "https://rinvex.com",
     "support": {
         "email": "help@rinvex.com",
-        "issues": "https://github.com/rinvex/laravel-subscriptions/issues",
-        "source": "https://github.com/rinvex/laravel-subscriptions",
-        "docs": "https://github.com/rinvex/laravel-subscriptions/blob/master/README.md"
+        "issues": "https://github.com/rymesaint/laravel-subscriptions/issues",
+        "source": "https://github.com/rymesaint/laravel-subscriptions",
+        "docs": "https://github.com/rymesaint/laravel-subscriptions/blob/master/README.md"
     },
     "authors": [
         {
@@ -37,19 +37,19 @@
         }
     ],
     "require": {
-        "php": "^7.2.0",
-        "illuminate/console": "^7.0.0",
-        "illuminate/database": "^7.0.0",
-        "illuminate/support": "^7.0.0",
-        "rinvex72/laravel-support": "dev-master",
-        "spatie/eloquent-sortable": "^3.7.0",
-        "spatie/laravel-sluggable": "2.2.2",
-        "spatie/laravel-translatable": "^4.2.0"
+        "php": "^8.0.0",
+        "illuminate/console": "^9.5.1",
+        "illuminate/database": "^9.5.1",
+        "illuminate/support": "^9.5.1",
+        "rymesaint/laravel-support": "dev-master",
+        "spatie/eloquent-sortable": "^4.0.1",
+        "spatie/laravel-sluggable": "3.3.1",
+        "spatie/laravel-translatable": "^6.0.0"
     },
     "require-dev": {
-        "codedungeon/phpunit-result-printer": "^0.27.0",
-        "illuminate/container": "^7.0.0",
-        "phpunit/phpunit": "^9.0.0"
+        "codedungeon/phpunit-result-printer": "^0.32.0",
+        "illuminate/container": "^9.5.1",
+        "phpunit/phpunit": "^9.5.19"
     },
     "autoload": {
         "classmap": [
